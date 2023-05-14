@@ -14,9 +14,9 @@ async function getWeather() {
     const temperature = response.data.main.temp;
     weather.textContent = `当前温度: ${temperature}°C`;
     if (temperature < 15) {
-      weather.textContent += ' 记得穿衣保暖';
+      weather.textContent += ' 小猪，现在温度低了记得穿衣保暖！';
     } else if (temperature > 25) {
-      weather.textContent += ' 温度较高，请注意防晒和降温';
+      weather.textContent += ' 小猪，现在温度较高，请注意防晒和降温！';
     }
   } catch (error) {
     console.error('Error getting weather:', error);
@@ -88,7 +88,7 @@ function analyzeSentiment(text) {
 
 const defaultCategories = [
   '火锅', '披萨', '汉堡', '土豆粉', '越南粉', '中式快餐', '川菜',
-  '美式早餐', '奶茶', '炸鸡', '沙拉', '豆腐汤', '烧烤', '海鲜', '牛排', '牛蛙', '烧菜'
+  '奶茶', '炸鸡', '沙拉', '豆腐汤', '烧烤', '海鲜', '牛排', '牛蛙', '烧菜'
 ];
 
 let categories = [...defaultCategories].map(category => ({ name: category, keywords: [category] }));
@@ -129,7 +129,7 @@ service.nearbySearch(request, async (results, status) => {
 
 }
 async function createCategories() {
-  categories = []; // 请确保清空categories数组
+  categories = []; 
   for (const category of defaultCategories) {
     const translatedKeywords = await translateText(category);
     categories.push({ name: category, keywords: [category].concat(translatedKeywords) });
@@ -370,7 +370,7 @@ async function displayRestaurant(selectedCategory) {
   document.getElementById('result').style.display = 'block';
 
   if (matchingRestaurants.length === 0) {
-    restaurantName.textContent = '很抱歉，没有找到相关餐厅';
+    restaurantName.textContent = '';
     restaurantAddress.textContent = '';
     restaurantDistance.textContent = '';
     restaurantRating.textContent = '';  // clear rating
@@ -392,7 +392,7 @@ async function displayRestaurant(selectedCategory) {
   restaurantName.textContent = chosenRestaurant.name;
   restaurantAddress.textContent = chosenRestaurant.vicinity;
   restaurantDistance.textContent = `距离: ${distance.toFixed(2)}公里`;
-  restaurantRating.textContent = `推荐指数: ${chosenRestaurant.rating}颗星`;  // newly added line
+  restaurantRating.textContent = `推荐指数: ${chosenRestaurant.rating}颗星！`;  // newly added line
 }
 
 spinBtn.addEventListener('click', async () => {
