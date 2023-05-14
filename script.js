@@ -28,6 +28,12 @@ function updateTime() {
   currentTime.textContent = `当前时间: ${now.toLocaleTimeString()}`;
 }
 
+
+
+
+let isDataLoaded = false;
+let defaultSpinTime = 5000; // 设置一个较长的默认旋转时间，如5秒
+
 async function init() {
   drawWheel(); // Draw the wheel immediately
   await initMap();
@@ -41,6 +47,11 @@ async function init() {
   setTimeout(() => {
     customAlert.style.display = 'none';
   }, 1000);
+
+  // Wait until all the restaurants are categorized before allowing the user to spin the wheel
+  await categorizeRestaurants();
+  isDataLoaded = true;
+  defaultSpinTime = 3000 + Math.random() * 2000; // 数据加载完成后设置旋转时间
 }
 
 // 更新时间每秒钟
@@ -399,9 +410,7 @@ async function displayRestaurant(selectedCategory) {
 
 spinBtn.addEventListener('click', async () => {
   const endAngle = angle + (3 + Math.random() * 7) * 2 * Math.PI;
-  const duration = 3000 + Math.random() * 2000;
 
-  const categoryIndex = await rotateWheel(endAngle, duration);
+  const categoryIndex = await rotateWheel(endAngle, defaultSpinTime);
   displayRestaurant(categories[categoryIndex].name);
 });
-
