@@ -321,7 +321,9 @@ ctx.restore();
 async function rotateWheel() {
   const anglePerCategory = 2 * Math.PI / categories.length;
   const spinCount = 3 + Math.floor(Math.random() * 3);  // random number of spins
-  const endAngle = spinCount * 2 * Math.PI + Math.floor(Math.random() * categories.length) * anglePerCategory;  // add random category
+  const randomCategoryIndex = Math.floor(Math.random() * categories.length);
+  const endAngle = spinCount * 2 * Math.PI + (randomCategoryIndex + 0.5) * anglePerCategory;
+
   const duration = 3000;  // animation duration in ms
 
   return new Promise((resolve) => {
