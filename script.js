@@ -32,7 +32,7 @@ function updateTime() {
 
 
 let isDataLoaded = false;
-let defaultSpinTime = 5000; // 设置一个较长的默认旋转时间，如5秒
+let defaultSpinTime = 10000; // 设置一个较长的默认旋转时间，如5秒
 
 async function init() {
   drawWheel(); // Draw the wheel immediately
