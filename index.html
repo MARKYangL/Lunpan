@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今天吃什么</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="custom-alert" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:1000; text-align:center; padding-top:15%;">
+  <div style="display:inline-block; width:300px; height:300px; padding:20px; background:url('https://live.staticflickr.com/65535/52898265003_ac5dc37dc3_z.jpg') no-repeat center center / cover; color:white;">
+    今天吃什么！
+  </div>
+</div>
+
+
+
+  <div class="info-container">
+    <p id="current-time" class="info-box"></p>
+    <p id="weather" class="info-box"></p>
+  </div>
+  <div class="container">
+    <h1>今天吃什么</h1>
+    <canvas id="wheel" width="400" height="400"></canvas>
+    <button id="spin-btn">开始</button>
+
+    <div id="result">
+      <h2 id="restaurant-name"></h2>
+      <p id="restaurant-address"></p>
+      <p id="restaurant-distance"></p>
+      <p id="restaurant-rating"></p>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUwSwVgXWizTDw5NQqWE-gpfvFiefqAhA&libraries=places,geometry&callback=init"></script>
+  <script src="script.js"></script>
+</body>
+</html>

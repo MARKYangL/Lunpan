@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('https://live.staticflickr.com/65535/52897981769_46d800b660_k.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.info-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+
+.info-box {
+  margin-bottom: 10px; /* some margin at the bottom */
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 10px;
+  color: #4a4a4a; /* 更改标题颜色 */
+}
+
+#result {
+  display: none;
+}
+
+#restaurant-name {
+  font-size: 20px;
+  margin: 0;
+  color: #4a4a4a; /* 更改餐厅名称颜色 */
+}
+
+#restaurant-address,
+#restaurant-distance,
+#sentiment-score,
+#current-time,
+#weather {
+  font-size: 14px;
+  margin: 0;
+  color: #4a4a4a; /* 更改其他文本颜色 */
+}
+
+#spin-btn {
+  background-color: #4a4a4a; /* 更改按钮背景颜色 */
+  color: white; /* 更改按钮文本颜色 */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#spin-btn:hover {
+  background-color: #7a7a7a;
+}
