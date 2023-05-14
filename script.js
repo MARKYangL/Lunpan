@@ -13,9 +13,9 @@ async function getWeather() {
     const response = await axios.get(weatherUrl);
     const temperature = response.data.main.temp;
     weather.textContent = `当前温度: ${temperature}°C`;
-    if (temperature < 15) {
+    if (temperature < 18) {
       weather.textContent += ' 小猪，现在温度低了记得穿衣保暖！';
-    } else if (temperature > 25) {
+    } else if (temperature > 23) {
       weather.textContent += ' 小猪，现在温度较高，请注意防晒和降温！';
     }
   } catch (error) {
