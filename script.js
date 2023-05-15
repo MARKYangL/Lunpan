@@ -32,7 +32,7 @@ function updateTime() {
 
 
 let isDataLoaded = false;
-let defaultSpinTime = 5000; // 设置一个较长的默认旋转时间，如5秒
+let defaultSpinTime = 10000; // 设置一个较长的默认旋转时间，如5秒
 
 let preloadCategories = [
   '火锅', '披萨', '汉堡', '土豆粉', '越南粉', '中式快餐', '川菜',
