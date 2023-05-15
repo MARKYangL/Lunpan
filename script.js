@@ -32,10 +32,16 @@ function updateTime() {
 
 
 let isDataLoaded = false;
-let defaultSpinTime = 10000; // 设置一个较长的默认旋转时间，如5秒
+let defaultSpinTime = 5000; // 设置一个较长的默认旋转时间，如5秒
+
+let preloadCategories = [
+  '火锅', '披萨', '汉堡', '土豆粉', '越南粉', '中式快餐', '川菜',
+  '奶茶', '炸鸡', '沙拉', '豆腐汤', '烧烤', '海鲜', '牛排', '牛蛙', '烧菜'
+];
 
 async function init() {
-  drawWheel(); // Draw the wheel immediately
+  drawWheel(preloadCategories); // 使用默认的餐厅种类绘制轮盘
+
   await initMap();
   getWeather();
   updateTime();
@@ -53,7 +59,6 @@ async function init() {
   isDataLoaded = true;
   defaultSpinTime = 3000 + Math.random() * 2000; // 数据加载完成后设置旋转时间
 }
-
 // 更新时间每秒钟
 setInterval(updateTime, 1000);
 
