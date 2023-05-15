@@ -52,7 +52,7 @@ async function init() {
   // 2秒后自动关闭弹窗
   setTimeout(() => {
     customAlert.style.display = 'none';
-  }, 4000);
+  }, 3000);
 
   // Wait until all the restaurants are categorized before allowing the user to spin the wheel
   await categorizeRestaurants();
