@@ -32,7 +32,7 @@ function updateTime() {
 
 
 let isDataLoaded = false;
-let defaultSpinTime = 10000; // 设置一个较长的默认旋转时间，如5秒
+let defaultSpinTime = 15000; // 设置一个较长的默认旋转时间，如5秒
 
 let preloadCategories = [
   '火锅', '披萨', '汉堡', '土豆粉', '越南粉', '中式快餐', '川菜',
@@ -52,7 +52,7 @@ async function init() {
   // 2秒后自动关闭弹窗
   setTimeout(() => {
     customAlert.style.display = 'none';
-  }, 1000);
+  }, 2000);
 
   // Wait until all the restaurants are categorized before allowing the user to spin the wheel
   await categorizeRestaurants();
