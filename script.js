@@ -52,7 +52,7 @@ async function init() {
   // 2秒后自动关闭弹窗
   setTimeout(() => {
     customAlert.style.display = 'none';
-  }, 2000);
+  }, 4000);
 
   // Wait until all the restaurants are categorized before allowing the user to spin the wheel
   await categorizeRestaurants();
@@ -61,7 +61,6 @@ async function init() {
 }
 // 更新时间每秒钟
 setInterval(updateTime, 1000);
-
 
 
 window.init = init;
@@ -414,6 +413,7 @@ async function displayRestaurant(selectedCategory) {
 }
 
 spinBtn.addEventListener('click', async () => {
+   
   const endAngle = angle + (3 + Math.random() * 7) * 2 * Math.PI;
 
   const categoryIndex = await rotateWheel(endAngle, defaultSpinTime);
